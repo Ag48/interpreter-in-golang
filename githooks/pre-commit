@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --rm -t -v $(git rev-parse --show-toplevel):/work -w /work --entrypoint="" golang:1 gofmt $(git diff --cached --name-only --diff-filter=ACM | grep "\.go")
